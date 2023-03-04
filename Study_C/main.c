@@ -12,12 +12,12 @@
 /**
  通过指向地址改变地址中的值，但int* a, int* b只是两个指针
  */
-//void change(int* a, int* b) {
-////    a = b;   //解注释后结果为1,2。这里是原本指向a的指针指向了b，变量a的值由于没有指针指向就没有改变
-//    int temp = *a;
-//    *a = *b;   //*a=2
-//    *b = temp;
-//}
+void change(int* a, int* b) {
+//    a = b;   //解注释后结果为1,2。这里是原本指向a的指针指向了b，变量a的值由于没有指针指向就没有改变
+    int temp = *a;
+    *a = *b;   //*a=2
+    *b = temp;
+}
 
 void add(int num1, int num2) {
     printf("num1 + num2 = %d\n", num1+num2);
@@ -75,7 +75,7 @@ int main(int argc, const char * argv[]) {
     char* fileName = "/Users/zouji/Downloads/IMG_20230116_162407.jpg";
     FILE *file = fopen(fileName, "rb");
     int fileSize = getFileSize(file);
-//    // 定义切割数量
+    // 定义切割数量
     int fileNum = 3;
     // 二维数组: image_0.jpg, image_1.jpg, image_2.jpg
     char** fileNames = (char**)malloc(sizeof(char*)*fileNum);
