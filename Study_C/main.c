@@ -72,6 +72,7 @@ int getFileSize(FILE *file) {
 }
 
 int main(int argc, const char * argv[]) {
+    // 切割文件===
     char* fileName = "/Users/zouji/Downloads/IMG_20230116_162407.jpg";
     FILE *file = fopen(fileName, "rb");
     int fileSize = getFileSize(file);
@@ -106,7 +107,7 @@ int main(int argc, const char * argv[]) {
     }
     
     
-    // 文件合并
+    // 文件合并===
     FILE* fpwrite = fopen("/Users/zouji/Downloads/IMG_merge.jpg", "wb");
     for(int i=0; i<fileNum; i++) {
         FILE* fpread = fopen(fileNames[i], "rb");
